@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://caohtu5m83fta"]
+
+[ext_resource type="Script" uid="uid://0w5cfk6ibqoe" path="res://scripts/screen_effects.gd" id="1_owbo8"]
+
+[node name="screen_effects" type="CanvasGroup" unique_id=444224861]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=728460462]
+script = ExtResource("1_owbo8")

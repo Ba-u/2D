@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cx4e6feu0vs18"]
+
+[ext_resource type="PackedScene" uid="uid://cnfx24axrynai" path="res://scenes/player/player.tscn" id="1_reayj"]
+[ext_resource type="PackedScene" uid="uid://7fmj83j521dm" path="res://scenes/map/background.tscn" id="2_reayj"]
+[ext_resource type="PackedScene" uid="uid://1pdgfmu2jjok" path="res://scenes/dummy.tscn" id="3_51tgp"]
+
+[node name="practice" type="Node" unique_id=1383618821]
+
+[node name="player" parent="." unique_id=1981830285 instance=ExtResource("1_reayj")]
+position = Vector2(633, 71)
+
+[node name="background" parent="." unique_id=2048974099 instance=ExtResource("2_reayj")]
+position = Vector2(636, 206)
+
+[node name="dummy" parent="." unique_id=1833467251 instance=ExtResource("3_51tgp")]
+position = Vector2(779, 187)

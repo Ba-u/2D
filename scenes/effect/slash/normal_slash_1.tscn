@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://u1ck3elxv63y"]
+
+[ext_resource type="Texture2D" uid="uid://8bllvld1845h" path="res://assets/effect/vfx_slash_vol_2/spritesheet_96x96/sprite_sheet_96x96.png" id="1_31dj1"]
+[ext_resource type="Script" uid="uid://covf2r53wk8de" path="res://scripts/slash.gd" id="1_olac7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84wvt"]
+atlas = ExtResource("1_31dj1")
+region = Rect2(0, 0, 96, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olac7"]
+atlas = ExtResource("1_31dj1")
+region = Rect2(96, 0, 96, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4g2o"]
+atlas = ExtResource("1_31dj1")
+region = Rect2(192, 0, 96, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yv5t"]
+atlas = ExtResource("1_31dj1")
+region = Rect2(288, 0, 96, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq15v"]
+atlas = ExtResource("1_31dj1")
+region = Rect2(384, 0, 96, 202)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d4pas"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84wvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olac7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4g2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yv5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq15v")
+}],
+"loop": false,
+"name": &"fade_out",
+"speed": 30.0
+}]
+
+[node name="normal_slash_1" type="Node2D" unique_id=81527704]
+script = ExtResource("1_olac7")
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=56118191]
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+z_index = 5
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_d4pas")
+animation = &"fade_out"
+frame = 4
+frame_progress = 1.0
+offset = Vector2(-10, 50)
+flip_v = true

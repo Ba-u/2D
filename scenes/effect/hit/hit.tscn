@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://y52nm664pha1"]
+
+[ext_resource type="Texture2D" uid="uid://kxaam2wdfu54" path="res://assets/effect/vfx_hit_effects_vol_2/spritesheet_96x96/sprite_sheet_96x96.png" id="1_a1u4s"]
+[ext_resource type="Script" uid="uid://b4ocqfv0olv81" path="res://scripts/hit.gd" id="1_c0q1t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0q1t"]
+atlas = ExtResource("1_a1u4s")
+region = Rect2(0, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_caymw"]
+atlas = ExtResource("1_a1u4s")
+region = Rect2(96, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efdlk"]
+atlas = ExtResource("1_a1u4s")
+region = Rect2(192, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djmc3"]
+atlas = ExtResource("1_a1u4s")
+region = Rect2(288, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm0jg"]
+atlas = ExtResource("1_a1u4s")
+region = Rect2(384, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtgp0"]
+atlas = ExtResource("1_a1u4s")
+region = Rect2(480, 0, 96, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwfxd"]
+atlas = ExtResource("1_a1u4s")
+region = Rect2(576, 0, 96, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gf8ck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0q1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_caymw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efdlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djmc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm0jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtgp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwfxd")
+}],
+"loop": false,
+"name": &"fade_out",
+"speed": 21.0
+}]
+
+[node name="hit" type="Node2D" unique_id=485824912]
+script = ExtResource("1_c0q1t")
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1877965539]
+modulate = Color(5.912981, 5.912981, 5.912981, 1)
+z_index = 10
+sprite_frames = SubResource("SpriteFrames_gf8ck")
+animation = &"fade_out"
+frame = 6
+frame_progress = 1.0
+offset = Vector2(0, -50)

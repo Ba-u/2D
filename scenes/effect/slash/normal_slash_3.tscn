@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://ccgvlqw41bpc5"]
+
+[ext_resource type="Texture2D" uid="uid://8bllvld1845h" path="res://assets/effect/vfx_slash_vol_2/spritesheet_96x96/sprite_sheet_96x96.png" id="1_02e55"]
+[ext_resource type="PackedScene" uid="uid://cwcsl8omwn6kb" path="res://scenes/effect/slash/normal_slash_2.tscn" id="1_ebwyj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebwyj"]
+atlas = ExtResource("1_02e55")
+region = Rect2(0, 404, 96, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qureh"]
+atlas = ExtResource("1_02e55")
+region = Rect2(96, 404, 96, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nderi"]
+atlas = ExtResource("1_02e55")
+region = Rect2(192, 404, 96, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_777og"]
+atlas = ExtResource("1_02e55")
+region = Rect2(288, 404, 96, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hto1v"]
+atlas = ExtResource("1_02e55")
+region = Rect2(384, 404, 96, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nhpu"]
+atlas = ExtResource("1_02e55")
+region = Rect2(480, 404, 96, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofbdm"]
+atlas = ExtResource("1_02e55")
+region = Rect2(576, 404, 96, 202)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qureh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebwyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qureh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nderi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_777og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hto1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nhpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofbdm")
+}],
+"loop": false,
+"name": &"fade_out",
+"speed": 30.0
+}]
+
+[node name="normal_slash_3" unique_id=81527704 instance=ExtResource("1_ebwyj")]
+
+[node name="sprite" parent="." index="0" unique_id=56118191]
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_qureh")
+frame = 6
+frame_progress = 1.0
