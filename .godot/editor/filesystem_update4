@@ -1,6 +1,0 @@
-res://scenes/effect/screen_effects/screen_effects.tscn
-res://scripts/screen_effects.gd
-res://scenes/player/player.tscn
-res://scripts/player.gd
-res://scripts/HITcamera.gd
-res://stage/practice.tscn
