@@ -189,9 +189,8 @@ func _pulse_param(param: String, peak: float, fade: float) -> void:
 	t.tween_property(mat, "shader_parameter/" + param, 0.0, fade)
 
 
-# 플레이어가 적중 시 호출: 번쩍임 + 비네팅 + 크로매틱 + 집중선을 함께
+# 플레이어가 적중 시 호출: 비네팅 + 크로매틱 + 집중선 (화면 번쩍임은 제외)
 func hit_feedback() -> void:
-	flash()
 	pulse_vignette()
 	pulse_chroma()
 	pulse_lines()
