@@ -33,11 +33,11 @@ extends CharacterBody2D
 @export var hitstop_time_finisher: float = 0.01 # 마지막 타 적중 시 더 길게
 @export var knockback_force: float = 280.0      # 적을 밀어내는 힘
 @export var attack_damage: Array[int] = [0, 1, 1, 1]  # 콤보별 데미지(index = 콤보 번호)
-@export var hit_shake: float = 0.35             # 적중 시 카메라 흔들림 양(0~1)
-@export var hit_shake_finisher: float = 0.6     # 마지막 타 흔들림 양
-@export var recoil_force: float = 180.0         # 적중 순간 공격자가 뒤로 밀리는 힘(리코일)
+@export var hit_shake: float = 0.18             # 적중 시 카메라 흔들림 양(0~1)
+@export var hit_shake_finisher: float = 0.28    # 마지막 타 흔들림 양
+@export var recoil_force: float = 70.0          # 적중 순간 공격자가 뒤로 밀리는 힘(리코일)
 @export var slowmo_scale: float = 0.1           # 피니셔 슬로모 배속(0~1, 작을수록 느림)
-@export var slowmo_time: float = 0.01           # 슬로모 지속 시간(실시간 초)
+@export var slowmo_time: float = 0.0            # 슬로모 지속 시간(0이면 슬로모 끔)
 
 @export_group("공격 판정")
 # 콤보별로 공격 판정이 켜지는 애니메이션 프레임 (index = 콤보 번호, 0번은 미사용)
@@ -470,11 +470,11 @@ func _exit_attack() -> void:
 #  타격감 (게임필)
 # ══════════════════════════════════════════════════════════════
 func _punch_scale() -> void:
-	# 휘두를 때 앞으로 쭉 늘어났다가 탄성있게 복귀
+	# 휘두를 때 살짝 늘어났다가 빠르게 복귀 (가벼운 느낌)
 	if not animated_sprite: return
-	animated_sprite.scale = _base_scale * Vector2(1.25, 0.8)
+	animated_sprite.scale = _base_scale * Vector2(1.12, 0.9)
 	var t := create_tween()
-	t.tween_property(animated_sprite, "scale", _base_scale, 0.12)\
+	t.tween_property(animated_sprite, "scale", _base_scale, 0.09)\
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
@@ -506,8 +506,8 @@ func apply_hit_pause(finisher: bool) -> void:
 	Engine.time_scale = 0.0
 	await get_tree().create_timer(freeze, true, false, true).timeout
 
-	# 2) 피니셔면 슬로모 후 부드럽게 복귀
-	if finisher:
+	# 2) 피니셔면 슬로모 후 부드럽게 복귀 (slowmo_time 0이면 생략 → 가볍게)
+	if finisher and slowmo_time > 0.0:
 		Engine.time_scale = slowmo_scale
 		await get_tree().create_timer(slowmo_time, true, false, true).timeout
 		var steps := 6
