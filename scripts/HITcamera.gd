@@ -22,15 +22,15 @@ extends Camera2D
 @export var limit_bottom_right: Vector2 = Vector2(100000, 100000)
 
 @export_group("흔들림(Shake)")
-@export var max_shake_offset: Vector2 = Vector2(14, 9)  # 흔들림 최대 이동량(px)
-@export var max_shake_roll: float = 0.03                # 흔들림 최대 회전(라디안), 0이면 회전 없음
-@export var shake_decay: float = 1.6                    # 흔들림이 가라앉는 속도
-@export var shake_directional: float = 16.0             # 타격 방향으로 치우치는 정도(px)
+@export var max_shake_offset: Vector2 = Vector2(6, 4)   # 흔들림 최대 이동량(px) — 가볍게
+@export var max_shake_roll: float = 0.0                 # 회전 흔들림 끔(가벼운 느낌)
+@export var shake_decay: float = 2.6                    # 흔들림이 빨리 가라앉음(스내피)
+@export var shake_directional: float = 7.0             # 타격 방향으로 치우치는 정도(px)
 
 @export_group("펀치 줌")
-@export var punch_zoom_amount: float = 0.05    # 적중 시 줌인 비율
-@export var punch_zoom_finisher: float = 0.10  # 마지막 타 줌인 비율
-@export var punch_zoom_time: float = 0.18      # 원래 줌으로 복귀 시간
+@export var punch_zoom_amount: float = 0.02    # 적중 시 줌인 비율
+@export var punch_zoom_finisher: float = 0.035 # 마지막 타 줌인 비율
+@export var punch_zoom_time: float = 0.10      # 원래 줌으로 복귀 시간(빠르게)
 
 var target: Node2D
 var _look_offset: float = 0.0

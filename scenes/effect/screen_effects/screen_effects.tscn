@@ -6,3 +6,8 @@
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=728460462]
 script = ExtResource("1_owbo8")
+lines_enabled = false
+lines_fade = 0.1
+lines_density = 120.0
+lines_width = 0.01
+lines_start = 0.065
