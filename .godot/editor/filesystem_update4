@@ -1,0 +1,5 @@
+res://scenes/map/background.tscn
+res://scripts/player.gd
+res://scripts/HITcamera.gd
+res://scripts/screen_effects.gd
+res://scenes/effect/screen_effects/screen_effects.tscn

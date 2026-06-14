@@ -6,3 +6,4 @@
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=728460462]
 script = ExtResource("1_owbo8")
+lines_enabled = false
